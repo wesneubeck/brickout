@@ -1,0 +1,39 @@
+
+import pygame 
+
+SCREEN_SIZE = 640, 480
+
+# Object dimensions
+BRICK_WIDTH = 60
+BRICK_HEIGHT = 15
+
+PADDLE_WIDTH = 60
+PADDLE_HEIGHT = 12
+
+BALL_DIAMETER = 16
+BALL_RADIUS = BALL_DIAMETER / 2
+
+# Paddle and ball movement
+# Paddle X coordinate
+MAX_PADDLE_X = SCREEN_SIZE[0] - PADDLE_WIDTH 
+# Paddle Y coordinate
+MAX_PADDLE_Y = SCREEN_SIZE[1] - PADDLE_HEIGHT - 10 
+
+MAX_BALL_X = SCREEN_SIZE[0] - BALL_DIAMETER
+MAX_BALL_Y = SCREEN_SIZE[1] - BALL_DIAMETER
+
+# Color constants
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+BLUE = (0, 0, 255)
+BRICK_COLOR = (200, 200, 0)
+
+# Game States constants
+STATE_BALL_IN_PADDLE = 0
+STATE_PLAYING = 1
+STATE_WON = 2
+STATE_GAME_OVER = 3
+
+
+
+
