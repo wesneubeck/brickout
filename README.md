@@ -17,7 +17,7 @@ Game begins in the ball in paddle state.  in this state the ball is glued to the
 When the game goes to "Won" or "Game Over" we can move back to "Ball in Paddle" by hitting the Enter key. reset the score to 0. 
 
 Paddle Movement:
-We move the paddle left to right by hitting the 'F' and 'J' keys.  We make sure to keep the paddle on the screen at all times.  
+We move the paddle left to right by hitting the 'LEFT' and 'RIGHT' keys.  We make sure to keep the paddle on the screen at all times.  
 
 Ball Movement:
 The Ball moves in 4 directions:
@@ -41,6 +41,17 @@ On the other hand.... we have to invert the Y velocity when the ball hits a bric
 
 Collision Detection:
 Technic use to determine if a collision has occured or not.  Basically two objects collide if they overlap.  We employ collision detection to determine if the ball collides with the bricks and the paddle.  
+
+
+We will run in the game inside the Class Bricka:
+
+
+
+
+
+
+
+
 
 
 
