@@ -1,7 +1,7 @@
-
+import sys
 import pygame 
 
-SCREEN_SIZE = 640, 480
+window = 640, 480
 
 # Object dimensions
 BRICK_WIDTH = 60
@@ -14,12 +14,12 @@ BALL_DIAMETER = 16
 BALL_RADIUS = BALL_DIAMETER // 2
 
 # Paddle and ball movement
-MAX_PADDLE_X = SCREEN_SIZE[0] - PADDLE_WIDTH 
-MAX_BALL_X = SCREEN_SIZE[0] - BALL_DIAMETER
-MAX_BALL_Y = SCREEN_SIZE[1] - BALL_DIAMETER
+MAX_PADDLE_X = window[0] - PADDLE_WIDTH 
+MAX_BALL_X = window[0] - BALL_DIAMETER
+MAX_BALL_Y = window[1] - BALL_DIAMETER
 
 # Paddle Y coordinate
-PADDLE_Y = SCREEN_SIZE[1] - PADDLE_HEIGHT - 10 
+PADDLE_Y = window[1] - PADDLE_HEIGHT - 10 
 
 # Color constants
 BLACK = (0, 0, 0)
@@ -39,7 +39,7 @@ class Bricka:
 	def __init__(self):
 		pygame.init()
 
-		self.screen = pygame.display.set_mode(SCREEN_SIZE)
+		self.screen = pygame.display.set_mode(window)
 		pygame.display.set_caption("Brickout!")
 
 		self.clock = pygame.time.Clock()
@@ -98,7 +98,7 @@ class Bricka:
 			self.ball_vel = [5, -5]
 			self.state = STATE_PLAYING
 
-		elif keys[pygame.K_RETURN] and (self.state == STATE_GAME_0VER or self.state == STATE_WON):
+		elif keys[pygame.K_RETURN] and (self.state == STATE_GAME_OVER or self.state == STATE_WON):
 			self.init_game() 
 
 
@@ -153,8 +153,8 @@ class Bricka:
 		if self.font:
 			size =  self.font.size(message)
 			font_surface = self.font.render(message, False, WHITE)
-			x = (SCREEN_SIZE[0] - size[0]) / 2
-			y = (SCREEN_SIZE[1] - size[1]) / 2
+			x = (window[0] - size[0]) / 2
+			y = (window[1] - size[1]) / 2
 			self.screen.blit(font_surface, (x, y))
 
 
@@ -163,7 +163,8 @@ class Bricka:
 		while 1:
 			for event in pygame.event.get():
 				if event.type == pygame.QUIT:
-					sys.exit
+					pygame.quit()
+					sys.exit()
 			
 			self.clock.tick(50)
 			self.screen.fill(BLACK)
