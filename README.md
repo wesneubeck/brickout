@@ -1,6 +1,11 @@
 
 BRICKOUT GAME
 
+from:
+
+http://codentronix.com/2011/04/14/game-programming-with-python-and-pygame-making-breakout/
+
+
 using pygame
 
 idea
@@ -44,13 +49,6 @@ Technic use to determine if a collision has occured or not.  Basically two objec
 
 
 We will run in the game inside the Class Bricka:
-
-
-
-
-
-
-
 
 
 
